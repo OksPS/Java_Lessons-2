@@ -1,0 +1,136 @@
+//интерфейс CAR
+package company;
+
+interface Car{
+
+    void maxSpeed (int ms);
+    void colorCar (String color);
+}
+
+//клас1
+package company;
+
+import javax.swing.*;
+import java.util.Scanner;
+
+public class SportCar implements Car {
+    Scanner scan = new Scanner(System.in);
+    private String name;
+
+    String getName() {
+        return name;
+    }
+
+    public void setName() {
+        System.out.println("Give the car a name:");
+        name = scan.nextLine();
+        System.out.println("My name: " + name);
+    }
+
+    @Override
+    public void maxSpeed(int ms) {
+        System.out.println("Max Speed:" + ms);
+    }
+
+    @Override
+    public void colorCar(String color) {
+        System.out.println("Color: " + color);
+    }
+}
+//класс2
+package company;
+
+import java.util.Scanner;
+
+public class WorkCar implements Car {
+    Scanner scan = new Scanner (System.in);
+    private String name;
+    String getName (){
+        return name;
+    }
+    public void setName(){
+        System.out.println("Give the car a name:");
+        name = scan.nextLine();
+        System.out.println("My name: " + name);
+    }
+    @Override
+    public void maxSpeed(int ms) {
+        System.out.println("Max Speed:" + ms);
+    }
+
+    @Override
+    public void colorCar(String color) {
+        System.out.println("Color: " + color);
+    }
+}
+//класс3
+package company;
+
+import java.util.Scanner;
+
+public class FamilyCar implements Car{
+    Scanner scan = new Scanner (System.in);
+    private String name;
+    String getName (){
+        return name;
+    }
+    public void setName(){
+        System.out.println("Give the car a name:");
+        name = scan.nextLine();
+        System.out.println("My name: " + name);
+    }
+    @Override
+    public void maxSpeed(int ms) {
+        System.out.println("Max Speed:" + ms);
+    }
+
+    @Override
+    public void colorCar(String color) {
+        System.out.println("Color: " + color);
+    }
+}
+// main
+
+package company;
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose a car");
+        System.out.println("1. SportCar");
+        System.out.println("2. WorkCar");
+        System.out.println("3. FamilyCar");
+        int i = scan.nextInt();
+        switch (i) {
+            case 1:
+                SportCar car1 = new SportCar();
+                car1.setName();
+                car1.getName();
+                car1.maxSpeed(250);
+                car1.colorCar("Red");
+                break;
+            case 2:
+                WorkCar car2 = new WorkCar();
+                car2.setName();
+                car2.getName();
+                car2.maxSpeed(180);
+                car2.colorCar("white");
+                break;
+            case 3:
+                FamilyCar car3 = new FamilyCar();
+                car3.setName();
+                car3.getName();
+                car3.maxSpeed(150);
+                car3.colorCar("Red");
+                break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + i);
+        }
+    }
+
+}
