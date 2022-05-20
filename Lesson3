@@ -1,0 +1,36 @@
+package company;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+        try {
+            int[] number = new int[6];
+            number[6] = 45;
+            System.out.println(number[6]);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            System.out.println("Blok finally");
+        }
+        System.out.println("Programm end");
+        try {
+            HashMap<String, String> map = new HashMap<String, String>(null);
+            map.put(null, null);
+            map.remove(null);
+        } catch (NullPointerException ex)
+
+        {
+            System.out.println("NullPointerException");
+        }
+        try {
+            ArrayList<String> list = new ArrayList<String>();
+            String s = list.get(10);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("IndexOutOfBoundsException");
+        }
+    }
+}
